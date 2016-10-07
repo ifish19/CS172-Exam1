@@ -16,6 +16,7 @@ void Theater::AddMovie(Movie& Movie)
 {
 	movieTimes[movieNumber] = Movie.GetShowtime();
 	movieList[movieNumber] = Movie.GetTitle();
+	movieGenres[movieNumber] = Movie.GetGenre();
 	movieNumber++;
 }
 
@@ -31,7 +32,12 @@ string Theater::GetMovieForHour(int Hour)
 
 int Theater::GetShowTimeForGenre(string Genre)
 {
-
+	for (int i = 0; i < 11; i++)
+	{
+		if (movieGenres[i] == Genre)
+			return movieTimes[i];
+	}
+	return -1;
 }
 
 int Theater::GetPopcornPrice()

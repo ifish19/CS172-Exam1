@@ -12,6 +12,7 @@ private:
 	string phoneNumber;
 	int movieTimes[11];
 	string movieList[11];
+	string movieGenres[11];
 	
 public:
 
