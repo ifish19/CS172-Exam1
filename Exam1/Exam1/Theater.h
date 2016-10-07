@@ -6,12 +6,15 @@ using namespace std;
 class Theater
 {
 private:
-	
+	// where the movie sits in the storage array
 	int movieNumber;
 	string theaterName;
 	string phoneNumber;
+	// storage array for showtimes at theater. can hold 11 movies
 	int movieTimes[11];
+	// stoarage array for movie titles at theater. can hold 11 movies
 	string movieList[11];
+	// storage array for genres at theater. can hold 11 movies
 	string movieGenres[11];
 	
 public:

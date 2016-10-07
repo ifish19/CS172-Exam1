@@ -14,6 +14,7 @@ Theater::Theater(string Name, string Phone)
 
 void Theater::AddMovie(Movie& Movie)
 {
+	// store movie's details in theater's storage arrays
 	movieTimes[movieNumber] = Movie.GetShowtime();
 	movieList[movieNumber] = Movie.GetTitle();
 	movieGenres[movieNumber] = Movie.GetGenre();
@@ -22,20 +23,22 @@ void Theater::AddMovie(Movie& Movie)
 
 string Theater::GetMovieForHour(int Hour)
 {
+	// Search the storage array of movie times for the specified time
 	for (int i = 0; i < 11; i++)
 	{
 		if (movieTimes[i] == Hour)
-			return movieList[i];
+			return movieList[i]; // return movie's title
 	}
 	return "";
 }
 
 int Theater::GetShowTimeForGenre(string Genre)
 {
+	// Search the storage array of genres for specified genre
 	for (int i = 0; i < 11; i++)
 	{
 		if (movieGenres[i] == Genre)
-			return movieTimes[i];
+			return movieTimes[i]; // return movie's showtime
 	}
 	return -1;
 }
